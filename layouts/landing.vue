@@ -12,6 +12,10 @@ const links = ref<LandingNavItem[]>([
     label: 'App',
     to: '/app',
   },
+  {
+    label: 'Calendar',
+    to: '/calendar',
+  },
 ])
 </script>
 
