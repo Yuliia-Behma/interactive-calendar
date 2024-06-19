@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const now = new Date();
-let currentMonth = ref(0);
-currentMonth.value = now.getMonth();
-let currentYear = ref(0);
-currentYear.value = now.getFullYear();
+let currentMonth = ref(now.getMonth());
+let currentYear = ref(now.getFullYear());
 
 const prevBtn = ref<HTMLElement | null>(null);
 const nextBtn = ref<HTMLElement | null>(null);
@@ -130,48 +128,7 @@ onMounted(() => {
     <div class="day-name">Fri</div>
     <div class="day-name">Sat</div>
 
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
-    <div class="date-box"></div>
+    <div class="date-box" v-for="n in 42" :key="n" @dragstart="handleDragStart"></div>
   </div>
 </template>
 
